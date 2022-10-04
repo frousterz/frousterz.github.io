@@ -4,24 +4,15 @@ import { StyledText, StyledTextWrapper } from "./styles";
 
 interface HeadingProps {
   readonly text: string;
-  fontSize?: FontSize;
   color?: string;
-  isBold?: boolean;
 }
 
 const Heading = (props: HeadingProps) => {
-  const { text, fontSize, color, isBold } = props;
+  const { text, color } = props;
 
   return text ? (
     <StyledTextWrapper>
-      <StyledText
-        mobileFontSize={fontSize?.mobile}
-        fontSize={fontSize?.desktop}
-        isBold={isBold}
-        color={color}
-      >
-        {text}
-      </StyledText>
+      <StyledText color={color}>{text}</StyledText>
     </StyledTextWrapper>
   ) : (
     <></>

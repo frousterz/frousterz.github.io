@@ -1,11 +1,13 @@
 import React from "react";
 import Text from "../../molecules/text";
-import { Wrapper } from "./styles";
+import { TextWrapper, Wrapper } from "./styles";
 
 const Masthead = () => {
   return (
     <Wrapper>
-      <Text />
+      <TextWrapper>
+        <Text />
+      </TextWrapper>
     </Wrapper>
   );
 };

@@ -1,30 +1,30 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { content } from "../../../../data/content";
 
 export const StyledTextWrapper = styled.div`
-  width: max-content;
+  width: 100%;
   height: auto;
+  overflow-wrap: break-word;
 `;
 
 interface TextProps {
-  fontSize?: number;
-  mobileFontSize?: number;
   color?: string;
-  isBold?: boolean;
 }
 
 export const StyledText = styled.h1<TextProps>`
-  color: ${(props) => props.mobileFontSize};
-  font-weight: ${(props) => (props.isBold ? "bold" : "normal")};
-  font-size: ${(props) =>
-    props.mobileFontSize ? `${props.mobileFontSize}px` : "12px"};
+  color: ${(props) => props.color};
+  font-weight: bold;
+  font-size: 48px;
 
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
-    font-size: ${(props) => (props.fontSize ? `${props.fontSize}px` : "16px")};
+    font-size: 64px;
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {
-    color: #fff;
+  @media only screen and (min-width: 1440px) {
+    font-size: 96px;
   }
+
+  margin: 0;
 `;
